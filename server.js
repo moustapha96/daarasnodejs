@@ -6,7 +6,7 @@ require("dotenv").config({ path: "./config/.env" });
 const { checkUser, requireAuth } = require("./middleware/auth.middleware");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
-
+const path = require("path");
 const userRoutes = require("./routes/user.routes");
 const formulaireRoutes = require("./routes/formulaire.routes");
 const formulaireDaaraRoute = require("./routes/formulaire-daara.routes");
@@ -42,7 +42,8 @@ app.use(
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to recensement des daaras application." });
+  // res.json({ message: "Welcome to recensement des daaras application." });
+  res.sendFile(path.join(__dirname + "/index.html"));
 });
 
 app.get("/api", (req, res) => {
