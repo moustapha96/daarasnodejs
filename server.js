@@ -45,6 +45,13 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to recensement des daaras application." });
 });
 
+app.get("/api", (req, res) => {
+  const path = `/api/`;
+  res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
+  res.end(`Bonjour ! Backend NodeJs`);
+});
+
 //route
 app.use("/api/users", userRoutes);
 app.use("/api/formulaires", formulaireRoutes);
