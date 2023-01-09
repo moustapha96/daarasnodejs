@@ -31,6 +31,7 @@ module.exports.new = async (req, res) => {
 module.exports.getAll = async (req, res) => {
   // pour ne pas envyer le passwor on met .select('-password');
   // pour retourner tout .select();
+
   const forms = await FormulaireDaaraModel.find();
   res.status(200).json(forms);
 };

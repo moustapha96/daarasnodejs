@@ -1,7 +1,7 @@
 const URL_DB = process.env.URL_DB;
 
-const url =
-  "mongodb+srv://khouma964:Khouma1996@formsdaaras.iwqt6kg.mongodb.net/?retryWrites=true&w=majority";
+const url = "mongodb://localhost:27017/recensement-daaras";
+// "mongodb+srv://khouma964:Khouma1996@formsdaaras.iwqt6kg.mongodb.net/?retryWrites=true&w=majority";
 
 const mongoose = require("mongoose");
 mongoose

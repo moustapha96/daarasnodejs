@@ -15,8 +15,7 @@ const regionRoutes = require("./routes/region.routes");
 const departementRoutes = require("./routes/departement.routes");
 
 const app = express();
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
@@ -42,7 +41,6 @@ app.use(
 
 // simple route
 app.get("/", (req, res) => {
-  // res.json({ message: "Welcome to recensement des daaras application." });
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
