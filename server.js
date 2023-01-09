@@ -46,7 +46,9 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-app.get("/about", (req, res) => res.send("About Page Route"));
+app.get("/about", (req, res) => {
+  res.sendFile(path.join(__dirname + "/about.html"));
+});
 
 //route
 app.use("/api/users", userRoutes);
