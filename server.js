@@ -31,7 +31,7 @@ app.use(
 app.use(
   cors({
     origin: "*",
-    credentials: true,
+    credentials: false,
     methods: "POST,GET,PUT,OPTIONS,DELETE",
     exposedHeaders: ["sessionId"],
     allowedHeaders: ["sessionId", "Content-Type"],
