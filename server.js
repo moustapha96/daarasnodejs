@@ -46,12 +46,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-app.get("/api", (req, res) => {
-  const path = `/api/`;
-  res.setHeader("Content-Type", "text/html");
-  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
-  res.end(`Bonjour ! Backend NodeJs`);
-});
+app.get("/about", (req, res) => res.send("About Page Route"));
 
 //route
 app.use("/api/users", userRoutes);
@@ -62,7 +57,7 @@ app.use("/api/departements", departementRoutes);
 app.use("/api/formsdaaras", formulaireDaaraRoute);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
