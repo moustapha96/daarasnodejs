@@ -20,24 +20,24 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
-app.use(
-  cookieSession({
-    name: "khouma-session",
-    secret: "COOKIE_SECRET", // should use as secret environment variable
-    httpOnly: true,
-  })
-);
+// app.use(
+//   cookieSession({
+//     name: "khouma-session",
+//     secret: "COOKIE_SECRET", // should use as secret environment variable
+//     httpOnly: true,
+//   })
+// );
 
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL,
-    credentials: true,
-    methods: "POST,GET,PUT,OPTIONS,DELETE",
-    exposedHeaders: ["sessionId"],
-    allowedHeaders: ["sessionId", "Content-Type"],
-    preflightContinue: false,
-  })
-);
+// app.use(
+//   cors({
+//     origin: process.env.CLIENT_URL,
+//     credentials: true,
+//     methods: "POST,GET,PUT,OPTIONS,DELETE",
+//     exposedHeaders: ["sessionId"],
+//     allowedHeaders: ["sessionId", "Content-Type"],
+//     preflightContinue: false,
+//   })
+// );
 
 // simple route
 app.get("/", (req, res) => {
